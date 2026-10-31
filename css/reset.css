@@ -1,0 +1,11 @@
+/* reset.html(記録リセットの確認ページ)の見た目 */
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:#12263f;color:#fff;font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;display:flex;align-items:center;justify-content:center;padding:24px}
+.box{width:100%;max-width:420px;text-align:center}
+.icon{font-size:64px;margin-bottom:8px}
+h1{font-size:24px;margin:0 0 12px}
+.sub{font-size:15px;line-height:1.7;opacity:.9;margin:0 0 24px}
+.warn{background:#7a1f1f;border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.6;margin:0 0 20px}
+.btn{display:block;background:#ffd666;color:#12263f;font-weight:800;font-size:18px;text-decoration:none;border-radius:999px;padding:16px 24px}
+.note{font-size:12px;opacity:.6;margin:20px 0 0;line-height:1.6}
