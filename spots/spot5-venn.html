@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>スポット5 ベン図</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/spots/spot5-venn.css">
+</head>
+<body data-spot="spot5">
+<div id="rotateMsg">📱 スマホを縦向きにしてください</div>
+<div id="mistakeBadge">まちがい 0回</div>
+
+<div id="gameLayer">
+  <div id="panel">
+    <div class="box" id="qBox">
+      <div class="q">学生<b>100人</b>のうち、<b>Python</b>を学んでいるのは60人、<b>Java</b>は45人、<b>両方</b>は25人です。<br><b>どちらも学んでいない</b>のは何人?</div>
+      <div class="sub">図の「?」をタップすると、その部分の人数がわかるよ</div>
+    </div>
+    <div id="venn">
+      <svg viewBox="0 0 320 210" role="img" aria-label="ベン図">
+        <rect x="4" y="4" width="312" height="202" rx="12" fill="#e9f1fb" stroke="#9bb4d0" stroke-width="3"/>
+        <text x="14" y="24" font-size="13" fill="#38506b">全体 100人</text>
+        <circle cx="125" cy="108" r="74" fill="#ffd66b" fill-opacity=".75" stroke="#b58a00" stroke-width="3"/>
+        <circle cx="198" cy="108" r="64" fill="#7fc0ff" fill-opacity=".7" stroke="#1d6fb8" stroke-width="3"/>
+        <text x="92" y="52" font-size="13" fill="#6b5200" text-anchor="middle">Python 60人</text>
+        <text x="228" y="56" font-size="13" fill="#0b3f70" text-anchor="middle">Java 45人</text>
+        <text x="94" y="116" font-size="26" fill="#6b5200" text-anchor="middle" id="tP">?</text>
+        <text x="162" y="116" font-size="26" fill="#1f2a3a" text-anchor="middle">25</text>
+        <text x="162" y="136" font-size="11" fill="#1f2a3a" text-anchor="middle">両方</text>
+        <text x="236" y="116" font-size="26" fill="#0b3f70" text-anchor="middle" id="tJ">?</text>
+        <text x="304" y="194" font-size="26" fill="#c0392b" text-anchor="end" id="tN">?</text>
+        <text x="304" y="174" font-size="11" fill="#c0392b" text-anchor="end">どちらも学んでいない</text>
+        <circle cx="88" cy="108" r="30" fill="transparent" id="hP" style="cursor:pointer"/>
+        <circle cx="236" cy="108" r="28" fill="transparent" id="hJ" style="cursor:pointer"/>
+      </svg>
+    </div>
+    <div id="ans">
+      <span class="lbl">どちらも<br>学んでいない</span>
+      <button class="stp" id="minus">−</button><div class="val" id="val">0人</div><button class="stp" id="plus">＋</button>
+    </div>
+    <button id="decide">これで決定</button>
+  </div>
+</div>
+<div id="resultBadge"><div class="badge" id="resultText"></div></div>
+<button id="exBtn">💡 ヒントを見る</button>
+<div id="exModal"><div class="card2">
+  <h3>ベン図の基本</h3>
+  <svg viewBox="0 0 300 130"><rect x="2" y="2" width="296" height="126" rx="10" fill="#eef4fb" stroke="#9bb4d0" stroke-width="3"/>
+    <circle cx="115" cy="68" r="48" fill="#ffd66b" fill-opacity=".75" stroke="#b58a00" stroke-width="2"/>
+    <circle cx="180" cy="68" r="48" fill="#7fc0ff" fill-opacity=".7" stroke="#1d6fb8" stroke-width="2"/>
+    <text x="85" y="72" font-size="12" font-weight="800" fill="#6b5200" text-anchor="middle">Aだけ</text>
+    <text x="148" y="72" font-size="12" font-weight="800" fill="#1f2a3a" text-anchor="middle">両方</text>
+    <text x="212" y="72" font-size="12" font-weight="800" fill="#0b3f70" text-anchor="middle">Bだけ</text>
+    <text x="270" y="118" font-size="11" font-weight="800" fill="#c0392b" text-anchor="end">どちらでもない</text></svg>
+  <div class="note">・ 2つの円が<b>重なった部分</b>が「両方」です。<br>・ 円の外側(長方形の中)が「どちらでもない」です。<br>・ <b>全体 = Aだけ + 両方 + Bだけ + どちらでもない</b><br><br><b>例題:</b> クラス20人のうち、犬を飼っている人が12人、猫が9人、両方が5人。どちらも飼っていない人は?<br>犬だけ 12−5=7人、猫だけ 9−5=4人。7+5+4=16人。<b>20−16=4人</b></div>
+  <div class="step" id="h1">① 「Pythonだけ」「Javaだけ」を先に求めよう(図の「?」をタップするとわかるよ)。</div>
+  <div class="step hidden" id="h2">② 「Pythonだけ + 両方 + Javaだけ」を足した人数を、全体の100人から引こう。</div>
+  <button class="more" id="moreBtn">さらにヒントを見る</button>
+  <button class="close" id="exClose">とじる</button>
+</div></div>
+<div id="clearScreen"><div class="stamp">🧮</div><h2>正解!</h2><p id="clearText"></p><div class="score" id="scoreText"></div><a id="goalLink" href="../goal.html" style="margin-top:16px;display:inline-block;background:#fff;color:#0b4a8f;font-weight:800;font-size:15px;padding:12px 28px;border-radius:26px;text-decoration:none">📒 スタンプ帳を見る</a><button id="nextBtn" style="display:none;margin-top:12px;background:transparent;color:#fff;border:2px solid #fff;font-weight:800;font-size:15px;padding:10px 26px;border-radius:26px">📷 次のスポットを探す</button></div>
+
+<script src="../js/config.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/spots/spot5-venn.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IVY大分 ARスタンプラリー スタンプ帳</title>
+<link rel="stylesheet" href="css/goal.css">
+
+</head>
+<body>
+<div class="wrap">
+  <h1>📒 IVY大分 ARスタンプ帳</h1>
+  <div class="sub">9つのスポットを回って、スタンプを集めよう</div>
+  <div class="grid" id="grid"></div>
+
+  <div class="card">
+    <div class="row"><span>スタンプ</span><span id="cnt">0 / 9</span></div>
+    <div class="row"><span>まちがい 合計</span><span id="mis">0回</span></div>
+    <div class="row"><span>かかった時間</span><span id="dur">-</span></div>
+    <div class="prize" id="prize"></div>
+    <div class="proof">
+      <div>いまの時刻(係の人が確認します)</div>
+      <div class="clock" id="clock">--:--:--</div>
+      <div>確認コード <span class="code" id="code">------</span></div>
+    </div>
+    <div class="received" id="received">✅ 景品は受け取り済みです</div>
+  </div>
+
+  <details class="staff">
+    <summary>係の人用</summary>
+    <input type="password" id="pin" inputmode="numeric" placeholder="係の暗証番号">
+    <button id="recvBtn">景品を渡した(受け取り済みにする)</button>
+    <div class="msg" id="msg"></div>
+  </details>
+
+  <div class="note">景品は、この画面を係の人に見せてください。<br>画面のスクリーンショットでは受け付けません。</div>
+  </div>
+<div id="camBar"><a id="camBtn" href="./index.html?auto=1">📷 マーカーを読みに行く</a></div>
+
+<script src="js/config.js"></script>
+<script src="js/goal.js"></script>
+</body>
+</html>

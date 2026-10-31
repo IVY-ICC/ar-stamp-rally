@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>スポット1 サーバーラック</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/spots/spot1-rack.css">
+</head>
+<body data-spot="spot1">
+<div id="rotateMsg">📱 スマホを縦向きにしてください</div>
+<div id="mistakeBadge">まちがい 0回</div>
+
+<div id="gameLayer">
+  <div id="panel">
+    <div class="box" id="qBox">
+      <div class="q">サーバー室のラックに、サーバーが<b>12台</b>あります。<br>このうち、全体の <b>1/4</b> を撤去します。<b>何台</b>撤去しますか?</div>
+      <div class="sub">撤去する台数だけ、好きなサーバーをタップして選び、「撤去を実行」を押そう(どのサーバーでもOK。もう一度タップで取り消し)</div>
+    </div>
+    <div id="rack"></div>
+    <div id="counter">撤去:0台 / 残り:12台</div>
+    <button id="doBtn">撤去を実行</button>
+  </div>
+</div>
+<div id="resultBadge"><div class="badge" id="resultText"></div></div>
+<div id="clearScreen"><div class="stamp">🗄️</div><h2>正解!</h2><p id="clearText"></p><div class="score" id="scoreText"></div><a id="goalLink" href="../goal.html" style="margin-top:16px;display:inline-block;background:#fff;color:#0b4a8f;font-weight:800;font-size:15px;padding:12px 28px;border-radius:26px;text-decoration:none">📒 スタンプ帳を見る</a><button id="nextBtn" style="display:none;margin-top:12px;background:transparent;color:#fff;border:2px solid #fff;font-weight:800;font-size:15px;padding:10px 26px;border-radius:26px">📷 次のスポットを探す</button></div>
+
+<script src="../js/config.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/spots/spot1-rack.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+/* ① サーバーラック 専用のスタイル(共通部分は ../common.css) */
+html, body { width:100%; height:100%; overflow:hidden; background: transparent !important;
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif; }
+.box { background:rgba(255,255,255,0.95); color:#1f2a3a; border-radius:14px; padding:10px 14px; box-shadow:0 6px 20px rgba(0,0,0,0.3); }
+#qBox .q { font-size:14px; font-weight:800; line-height:1.6; }
+#qBox .sub { font-size:12px; font-weight:600; opacity:.75; margin-top:3px; }
+#rack { margin-top:10px; display:grid; grid-template-columns:repeat(4,1fr); gap:8px; pointer-events:auto; background:rgba(11,35,64,0.92); border-radius:14px; padding:10px; border:3px solid #6f8db0; }
+.srv { position:relative; height:52px; border-radius:8px; background:linear-gradient(#37506e,#243a54); border:2px solid #9bb4d0; display:flex; align-items:center; justify-content:space-between; padding:0 8px; color:#cfe3f7; font-size:12px; font-weight:800; touch-action:manipulation; }
+.srv .led { width:9px; height:9px; border-radius:50%; background:#4cff8a; box-shadow:0 0 6px #4cff8a; }
+.srv .led.b { background:#ffd66b; box-shadow:0 0 6px #ffd66b; margin-left:3px; }
+.srv.off { opacity:.35; border:2px dashed #ff8f8f; background:transparent; }
+.srv.off .led { background:#777; box-shadow:none; }
+.srv.off::after { content:"✕"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#ff8f8f; font-size:26px; }
+#counter { margin:10px auto 0; width:fit-content; background:rgba(0,0,0,.6); border-radius:16px; padding:5px 16px; text-align:center; font-size:14px; font-weight:800; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.7); }
+#doBtn { display:block; margin:10px auto 0; background:#fff; color:#0b4a8f; border:none; border-radius:30px; padding:13px 38px; font-size:16px; font-weight:800; box-shadow:0 6px 18px rgba(0,0,0,0.35); pointer-events:auto; }
+#resultBadge { position:fixed; bottom:max(24px, env(safe-area-inset-bottom)); left:0; width:100%; z-index:31; text-align:center; pointer-events:none; display:none; }
+#resultBadge .badge { display:inline-block; background: rgba(0,0,0,0.6); border:2px solid rgba(255,255,255,0.65); border-radius:22px; padding:8px 18px; font-size:14px; font-weight:700; color:#fff; }
+@media (max-height:640px){ .srv{height:44px;} #qBox .q{font-size:12.5px;} #doBtn{padding:10px 30px;font-size:15px;} }
+html, body { touch-action: none; overscroll-behavior: none; }
+@supports (height: 100dvh) { html, body, #gameLayer, #clearScreen { height: 100dvh; } }

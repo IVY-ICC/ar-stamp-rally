@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>IVY大分 ARスタンプラリー</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.4.2/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+<link rel="stylesheet" href="css/hub.css">
+
+</head>
+<body>
+
+<div id="start">
+  <h1>📍 IVY大分<br>ARスタンプラリー</h1>
+  <p>このページを開いたままで OK。<br>あとは、校内の <b>マーカー(ポスター)</b> に<br>カメラを向けるだけで問題が出ます。</p>
+  <button id="goBtn">カメラを起動してスタート</button>
+  <p style="font-size:12px;opacity:.7">※ SafariまたはChromeで開いてください(LINE等のアプリ内ブラウザは不可)<br>※ 途中でページを閉じても、同じブラウザで開き直せば続きから</p>
+</div>
+
+<div id="err">カメラを使えませんでした。<br>SafariまたはChromeで開き、<br>カメラの許可をオンにしてください。<br><br>(LINEなどのアプリ内ブラウザでは動きません)</div>
+
+<!-- ★ imageTargetSrc が、読み取りデータ(all.mind)の場所です。差し替えたら ?v= の数字も変えると、古いデータが残りません -->
+<a-scene id="scene" mindar-image="imageTargetSrc: ./ar/all.mind?v=20261029f; autoStart: false; uiScanning: no; uiLoading: no; filterMinCF: 0.001; filterBeta: 10;"
+         color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights: true, alpha: true" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+  <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+  <a-entity id="t0" mindar-image-target="targetIndex: 0"></a-entity>
+  <a-entity id="t1" mindar-image-target="targetIndex: 1"></a-entity>
+  <a-entity id="t2" mindar-image-target="targetIndex: 2"></a-entity>
+  <a-entity id="t3" mindar-image-target="targetIndex: 3"></a-entity>
+  <a-entity id="t4" mindar-image-target="targetIndex: 4"></a-entity>
+  <a-entity id="t5" mindar-image-target="targetIndex: 5"></a-entity>
+  <a-entity id="t6" mindar-image-target="targetIndex: 6"></a-entity>
+  <a-entity id="t7" mindar-image-target="targetIndex: 7"></a-entity>
+  <a-entity id="t8" mindar-image-target="targetIndex: 8"></a-entity>
+</a-scene>
+
+<button id="playBtn" style="display:none;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:45;background:#ffd66b;color:#0b2037;border:none;border-radius:34px;font-size:20px;font-weight:900;padding:18px 34px">▶ タップしてカメラを開始</button>
+<div id="hint"><span>📷 マーカーにカメラを向けてください</span></div>
+<div id="bar"><span id="stamps">スタンプ 0 / 9</span><button id="goalBtn">📒 スタンプ帳</button></div>
+<iframe id="frame" allow="" title="spot"></iframe>
+
+<script src="js/config.js"></script>
+<script src="js/hub.js"></script>
+</body>
+</html>

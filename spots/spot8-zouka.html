@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>スポット8 増加率</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/spots/spot8-zouka.css">
+</head>
+<body data-spot="spot8">
+<div id="rotateMsg">📱 スマホを縦向きにしてください</div>
+<div id="mistakeBadge">まちがい 0回</div>
+
+<div id="gameLayer">
+  <div id="panel">
+    <div class="box" id="qBox">
+      <div class="q">CADソフトの利用者は、昨年が<b>200人</b>、今年が<b>250人</b>でした。来年は<b>300人</b>になる予想です。<br><b>今年(250人)を100%</b>とすると、来年は何%増える?</div>
+      <div class="sub">スライダーで%を動かすと、「何人になるか」が出るよ。300人になる%に合わせよう</div>
+    </div>
+    <div id="chart">
+      <div class="lab">昨年 200人</div>
+      <div class="barwrap"><div class="bar" style="width:66.7%;background:#4f8fd6"></div></div>
+      <div class="lab">今年 250人 ← 基準(100%)</div>
+      <div class="barwrap"><div class="bar" style="width:83.3%;background:#59c98a"></div></div>
+      <div class="lab">来年 300人(予想)</div>
+      <div class="barwrap"><div class="bar" style="width:100%;background:#ffb38f"></div></div>
+      <input type="range" id="sl" min="0" max="50" step="5" value="0">
+      <div id="pct">0%</div>
+      <div id="calc" style="text-align:center;font-size:13px;font-weight:800;color:#fff">250人の 0% 増し → 250人</div>
+    </div>
+    <button id="decide">これで決定</button>
+  </div>
+</div>
+<div id="resultBadge"><div class="badge" id="resultText"></div></div>
+<button id="exBtn">💡 ヒントを見る</button>
+<div id="exModal"><div class="card2">
+  <h3>ヒント: 「基準」を決めよう</h3>
+  <div class="note"><b>増加率 = 増えた数 ÷ 基準の数 × 100(%)</b><br>「〜を100%とすると」と書いてある数が<b>基準</b>です。<br><br><b>例題:</b> 昨年100人 → 今年120人 → 来年150人。<br>今年(120人)を100%とすると、来年は何%増える?<br>増えた数: 150−120=30人<br>基準は今年の120人なので、30÷120×100=<b>25%</b><br>(昨年の100人を基準にした 50% ではありません)</div>
+  <div class="step" id="h1" style="margin-top:8px;background:#fff6c8;border-radius:10px;padding:8px 10px;font-size:13px;font-weight:700;line-height:1.6">この問題の基準は「今年の250人」です。来年は300人なので、増える数は何人かな?</div>
+  <button class="close" id="exClose">とじる</button>
+</div></div>
+<div id="clearScreen"><div class="stamp">📈</div><h2>正解!</h2><p id="clearText"></p><div class="score" id="scoreText"></div><a id="goalLink" href="../goal.html" style="margin-top:16px;display:inline-block;background:#fff;color:#0b4a8f;font-weight:800;font-size:15px;padding:12px 28px;border-radius:26px;text-decoration:none">📒 スタンプ帳を見る</a><button id="nextBtn" style="display:none;margin-top:12px;background:transparent;color:#fff;border:2px solid #fff;font-weight:800;font-size:15px;padding:10px 26px;border-radius:26px">📷 次のスポットを探す</button></div>
+
+<script src="../js/config.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/spots/spot8-zouka.js"></script>
+</body>
+</html>

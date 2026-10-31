@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>スポット3 迷路暗号</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/spots/spot3-meiro.css">
+</head>
+<body data-spot="spot3">
+<div id="rotateMsg">📱 スマホを縦向きにしてください</div>
+<div id="mistakeBadge">まちがい 0回</div>
+
+<div id="gameLayer">
+  <div id="panel">
+    <div class="box" id="qBox">
+      <div class="q" id="qText">迷路の中の文字を <b>D → B → E</b> の順に拾おう。<br>拾った文字は、アルファベットで<b>1つ前の文字</b>に直して並べると、ある言葉になるよ。</div>
+      <div class="got" id="got">拾った文字: _ _ _</div>
+    </div>
+    <div id="maze"></div>
+    <div id="ctrl">
+      <div id="dpad">
+        <span></span><button data-d="U">▲</button><span></span>
+        <button data-d="L">◀</button><button data-d="D">▼</button><button data-d="R">▶</button>
+      </div>
+      <div id="choices"></div>
+    </div>
+  </div>
+</div>
+<div id="resultBadge"><div class="badge" id="resultText"></div></div>
+<div id="clearScreen"><div class="stamp">🧩</div><h2>正解!</h2><p id="clearText"></p><div class="score" id="scoreText"></div><a id="goalLink" href="../goal.html" style="margin-top:16px;display:inline-block;background:#fff;color:#0b4a8f;font-weight:800;font-size:15px;padding:12px 28px;border-radius:26px;text-decoration:none">📒 スタンプ帳を見る</a><button id="nextBtn" style="display:none;margin-top:12px;background:transparent;color:#fff;border:2px solid #fff;font-weight:800;font-size:15px;padding:10px 26px;border-radius:26px">📷 次のスポットを探す</button></div>
+
+<script src="../js/config.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/spots/spot3-meiro.js"></script>
+</body>
+</html>

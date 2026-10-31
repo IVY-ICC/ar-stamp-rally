@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>スポット9 間違い探し</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/spots/spot9-sagasu.css">
+</head>
+<body data-spot="spot9">
+<div id="rotateMsg">📱 スマホを縦向きにしてください</div>
+<div id="mistakeBadge">まちがい 0回</div>
+
+<div id="gameLayer">
+  <div id="panel">
+    <div class="box" id="qBox">
+      <div class="q">数字の<b>0と1</b>が並ぶ中に、アルファベットの<b>O(オー)</b>と<b>I(アイ)</b>が<b>3つずつ</b>まぎれています。全部見つけてタップしよう!</div>
+      <div class="sub" id="prog">見つけた数  O: 0/3  ・  I: 0/3</div>
+    </div>
+    <div id="grid"></div>
+  </div>
+</div>
+<div id="resultBadge"><div class="badge" id="resultText"></div></div>
+<button id="exBtn">💡 ヒントを見る</button>
+<div id="exModal"><div class="card2">
+  <h3>見分け方のヒント</h3>
+  <div class="pair"><div>0<small>ゼロ</small></div><div>O<small>オー</small></div><div>1<small>いち</small></div><div>I<small>アイ</small></div></div>
+  <div class="note">・ <b>0</b>は細長く、<b>O</b>は少し横に広い丸い形です。<br>・ <b>1</b>は上に小さな「はね」があり、<b>I</b>は ただの<b>まっすぐな棒</b>です。<br>はねのない棒と、横に広い丸を探してみよう。</div>
+  <button class="close" id="exClose">とじる</button>
+</div></div>
+<div id="clearScreen"><div class="stamp">🔍</div><h2>全部見つけた!</h2><p id="clearText"></p><div class="score" id="scoreText"></div><a id="goalLink" href="../goal.html" style="margin-top:16px;display:inline-block;background:#fff;color:#0b4a8f;font-weight:800;font-size:15px;padding:12px 28px;border-radius:26px;text-decoration:none">📒 スタンプ帳を見る</a><button id="nextBtn" style="display:none;margin-top:12px;background:transparent;color:#fff;border:2px solid #fff;font-weight:800;font-size:15px;padding:10px 26px;border-radius:26px">📷 次のスポットを探す</button></div>
+
+<script src="../js/config.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/spots/spot9-sagasu.js"></script>
+</body>
+</html>

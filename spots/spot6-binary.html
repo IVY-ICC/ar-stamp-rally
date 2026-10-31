@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>スポット6 2進数</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/spots/spot6-binary.css">
+</head>
+<body data-spot="spot6">
+<div id="rotateMsg">📱 スマホを縦向きにしてください</div>
+<div id="mistakeBadge">まちがい 0回</div>
+
+<div id="qBox">
+  <div class="q">コンピュータは<b>2進数</b>(0と1)で数を表します。<br>4つの2進数カードを、同じ大きさの<b>10進数</b>の枠に置こう。</div>
+  <div class="sub">0=0、1=1 …… 次は 10=? むずかしいときは「例題を見る」を押してね</div>
+</div>
+<div id="gameLayer"></div>
+<div id="resultBadge"><div class="badge" id="resultText"></div></div>
+<button id="exBtn">💡 例題を見る</button>
+<button id="checkBtn">これで決定</button>
+<div id="exModal"><div class="card2">
+  <h3>2進数の基本</h3>
+  <div class="note">0 → 0、1 → 1、<b>10 → 2</b>、<b>11 → 3</b><br>1の次は「桁が上がって」10(イチゼロ)になります。<br>右から、<b>1・2・4・8</b> と2倍ずつ大きくなる位です。</div>
+  <h3 style="margin-top:10px">例題: 2進数 1011 を10進数にすると?</h3>
+  <table>
+    <tr class="bin"><th>2進数</th><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+    <tr class="w"><th>各桁の重み</th><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+    <tr class="res"><th>重み × 数</th><td>8</td><td>0</td><td>2</td><td>1</td></tr>
+  </table>
+  <div class="note">① 右から、<b>1・2・4・8</b> と2倍ずつ増える「重み」を書く。<br>② 「1」になっている桁の重みだけを足す。<br><b>8 + 0 + 2 + 1 = 11</b><br>※ 桁が3つなら、重みは 4・2・1 です。</div>
+  <button class="close" id="exClose">とじる</button>
+</div></div>
+<div id="clearScreen"><div class="stamp">💾</div><h2>正解!</h2><p id="clearText"></p><div class="score" id="scoreText"></div><a id="goalLink" href="../goal.html" style="margin-top:16px;display:inline-block;background:#fff;color:#0b4a8f;font-weight:800;font-size:15px;padding:12px 28px;border-radius:26px;text-decoration:none">📒 スタンプ帳を見る</a><button id="nextBtn" style="display:none;margin-top:12px;background:transparent;color:#fff;border:2px solid #fff;font-weight:800;font-size:15px;padding:10px 26px;border-radius:26px">📷 次のスポットを探す</button></div>
+
+<script src="../js/config.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/spots/spot6-binary.js"></script>
+</body>
+</html>

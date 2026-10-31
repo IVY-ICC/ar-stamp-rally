@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>スポット2 平均</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/spots/spot2-heikin.css">
+</head>
+<body data-spot="spot2">
+<div id="rotateMsg">📱 スマホを縦向きにしてください</div>
+<div id="mistakeBadge">まちがい 0回</div>
+
+<div id="gameLayer">
+  <div id="panel">
+    <div id="tableCard">
+      <h3>IT実習室の利用者数(月〜金)</h3>
+      <table>
+        <tr><td>月曜日</td><td>24人</td></tr>
+        <tr><td>火曜日</td><td>30人</td></tr>
+        <tr><td>水曜日</td><td style="color:#c0392b">データ破損</td></tr>
+        <tr><td>木曜日</td><td>36人</td></tr>
+        <tr><td>金曜日</td><td>42人</td></tr>
+      </table>
+      <canvas id="fog"></canvas>
+      <div id="fogMsg">🧽 指でモニターをふいて、よごれを落とそう</div>
+    </div>
+    <div id="qCard">
+      <div class="q">この5日間の平均は <b>30人</b> でした。<br>データが壊れている<b>水曜日</b>は、何人?</div>
+      <div id="choices"></div>
+    </div>
+  </div>
+</div>
+<div id="resultBadge"><div class="badge" id="resultText"></div></div>
+<div id="clearScreen"><div class="stamp">📊</div><h2>正解!</h2><p id="clearText"></p><div class="score" id="scoreText"></div><a id="goalLink" href="../goal.html" style="margin-top:16px;display:inline-block;background:#fff;color:#0b4a8f;font-weight:800;font-size:15px;padding:12px 28px;border-radius:26px;text-decoration:none">📒 スタンプ帳を見る</a><button id="nextBtn" style="display:none;margin-top:12px;background:transparent;color:#fff;border:2px solid #fff;font-weight:800;font-size:15px;padding:10px 26px;border-radius:26px">📷 次のスポットを探す</button></div>
+
+<script src="../js/config.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/spots/spot2-heikin.js"></script>
+</body>
+</html>

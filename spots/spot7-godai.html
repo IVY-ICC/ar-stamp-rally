@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>スポット7 五大装置</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/spots/spot7-godai.css">
+</head>
+<body data-spot="spot7">
+<div id="rotateMsg">📱 スマホを縦向きにしてください</div>
+<div id="mistakeBadge">まちがい 0回</div>
+
+<div id="gameLayer"><canvas id="arrowCanvas"></canvas></div>
+
+<div id="clueBox">
+  <div class="q">5つの装置を、図の正しい位置に置こう</div>
+  ① データは「入力 → 記憶 → 出力」の順に流れる<br>
+  ② 演算装置は、記憶装置とだけデータをやり取りする<br>
+  ③ 他の4つすべてに指示(青)を出す装置を、いちばん上に置く
+  <div class="legend"><span style="color:#d11">赤い矢印=データの流れ</span> / <span style="color:#16c">青い矢印=制御の流れ</span></div>
+</div>
+<div id="resultBadge"><div class="badge" id="resultText"></div></div>
+<button id="checkBtn">これで決定</button>
+<button id="exBtn">💡 ヒントを見る</button>
+<div id="exModal"><div class="card2">
+  <h3>ヒント: 置き場所はこうなります</h3>
+  <svg viewBox="0 0 300 190">
+    <rect x="105" y="6" width="90" height="38" rx="8" fill="#ffd66b" stroke="#b58a00" stroke-width="2"/><text x="150" y="30" font-size="13" font-weight="800" text-anchor="middle" fill="#0b2037">制御装置</text>
+    <rect x="75" y="68" width="90" height="38" rx="8" fill="#9fe0b4" stroke="#2f8f55" stroke-width="2"/><text x="120" y="92" font-size="13" font-weight="800" text-anchor="middle" fill="#0b2037">演算装置</text>
+    <rect x="8" y="140" width="84" height="38" rx="8" fill="#7fc0ff" stroke="#1d6fb8" stroke-width="2"/><text x="50" y="164" font-size="13" font-weight="800" text-anchor="middle" fill="#0b2037">入力装置</text>
+    <rect x="108" y="140" width="84" height="38" rx="8" fill="#ffb38f" stroke="#c0643a" stroke-width="2"/><text x="150" y="164" font-size="13" font-weight="800" text-anchor="middle" fill="#0b2037">記憶装置</text>
+    <rect x="208" y="140" width="84" height="38" rx="8" fill="#d7b8ff" stroke="#7a52b8" stroke-width="2"/><text x="250" y="164" font-size="13" font-weight="800" text-anchor="middle" fill="#0b2037">出力装置</text>
+  </svg>
+  <div class="pos">① <b>制御装置</b>は、いちばん上。<br>② <b>演算装置</b>は、制御装置のすぐ下。<br>③ 下の段は、<b>左から 入力装置 → 記憶装置 → 出力装置</b> の順。<br>(データは 入力 → 記憶 → 出力 と流れます)</div>
+  <button class="close" id="exClose">とじる</button>
+</div></div>
+<div id="clearScreen"><div class="stamp">🖥️</div><h2>正解!</h2><p id="clearText"></p><div class="score" id="scoreText"></div><a id="goalLink" href="../goal.html" style="margin-top:16px;display:inline-block;background:#fff;color:#0b4a8f;font-weight:800;font-size:15px;padding:12px 28px;border-radius:26px;text-decoration:none">📒 スタンプ帳を見る</a><button id="nextBtn" style="display:none;margin-top:12px;background:transparent;color:#fff;border:2px solid #fff;font-weight:800;font-size:15px;padding:10px 26px;border-radius:26px">📷 次のスポットを探す</button></div>
+
+<script src="../js/config.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/spots/spot7-godai.js"></script>
+</body>
+</html>

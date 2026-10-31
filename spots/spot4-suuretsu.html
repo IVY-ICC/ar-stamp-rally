@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>スポット4 数列</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/spots/spot4-suuretsu.css">
+</head>
+<body data-spot="spot4">
+<div id="rotateMsg">📱 スマホを縦向きにしてください</div>
+<div id="mistakeBadge">まちがい 0回</div>
+
+<div id="gameLayer">
+  <div id="panel">
+    <div class="box" id="qBox">
+      <div class="q">数字が、ある規則で並んでいます。<br><b>?</b> に入る数は?</div>
+      <div class="sub">図形をタップすると、次の数との「差」が見えるよ</div>
+    </div>
+    <div id="seq"></div>
+    <div id="choices"></div>
+  </div>
+</div>
+<div id="resultBadge"><div class="badge" id="resultText"></div></div>
+<button id="exBtn">💡 ヒントを見る</button>
+<div id="exModal"><div class="card2">
+  <h3>ヒント</h3>
+  <div class="note"><b>例題:</b> 2, 3, 5, 8, 12, ? に入る数は?<br>となり同士の「差」を調べます。<br>3−2=1、5−3=2、8−5=3、12−8=4 … 差が 1, 2, 3, 4 と増えているので、次の差は 5。<br>12+5 = <b>17</b></div>
+  <div class="step" id="h1">① まず、図形をタップして「次の数との差」を全部見てみよう。</div>
+  <div class="step hidden" id="h2">② 差を横に並べて、その数の並びにも規則がないか探してみよう。</div>
+  <button class="more" id="moreBtn">さらにヒントを見る</button>
+  <button class="close" id="exClose">とじる</button>
+</div></div>
+<div id="clearScreen"><div class="stamp">🔢</div><h2>正解!</h2><p id="clearText"></p><div class="score" id="scoreText"></div><a id="goalLink" href="../goal.html" style="margin-top:16px;display:inline-block;background:#fff;color:#0b4a8f;font-weight:800;font-size:15px;padding:12px 28px;border-radius:26px;text-decoration:none">📒 スタンプ帳を見る</a><button id="nextBtn" style="display:none;margin-top:12px;background:transparent;color:#fff;border:2px solid #fff;font-weight:800;font-size:15px;padding:10px 26px;border-radius:26px">📷 次のスポットを探す</button></div>
+
+<script src="../js/config.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/spots/spot4-suuretsu.js"></script>
+</body>
+</html>
