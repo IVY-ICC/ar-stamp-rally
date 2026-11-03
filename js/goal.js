@@ -27,9 +27,9 @@ if (start && last && done > 0){
 // 景品
 let tag = '', big = '', txt = '';
 if (done === 0){ tag = 'まだスタンプがありません'; big = '🎯'; txt = 'スポットのマーカーを見つけて、問題に挑戦しよう!'; }
-else if (done < 9){ tag = '参加賞'; big = 'お菓子 ' + PRIZE.partial + '個'; txt = 'あと ' + (9 - done) + ' スポットで完走! 完走すると もっともらえるよ。'; }
-else if (total === 0){ tag = '🎉 完走・まちがい0回!'; big = 'お菓子 ' + PRIZE.perfect + '個'; txt = 'すばらしい! 全問ノーミスでした。'; }
-else { tag = '🏅 完走!'; big = 'お菓子 ' + PRIZE.complete + '個'; txt = '9スポットすべてクリア! おつかれさまでした。'; }
+else if (done < 9){ tag = '参加賞'; big = '景品 ' + PRIZE.partial + '個'; txt = 'あと ' + (9 - done) + ' スポットで完走! 完走すると もっともらえるよ。'; }
+else if (total === 0){ tag = '🎉 完走・まちがい0回!'; big = '景品 ' + PRIZE.perfect + '個'; txt = 'すばらしい! 全問ノーミスでした。'; }
+else { tag = '🏅 完走!'; big = '景品 ' + PRIZE.complete + '個'; txt = '9スポットすべてクリア! おつかれさまでした。'; }
 document.getElementById('prize').innerHTML = '<span class="tag">'+tag+'</span><div class="big">'+big+'</div><div class="txt">'+txt+'</div>';
 // 確認コード(スタンプ数・まちがい数・最終クリア時刻から計算)
 function hash(s){ let h = 5381; for (let i=0;i<s.length;i++) h = ((h << 5) + h + s.charCodeAt(i)) >>> 0; return h.toString(36).toUpperCase().padStart(6,'0').slice(-6); }
