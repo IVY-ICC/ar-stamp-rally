@@ -50,4 +50,8 @@ if (window.__EMBED){
   const goal = document.getElementById('goalLink');
   if (next){ next.style.display = 'inline-block'; next.addEventListener('click', ()=> parent.postMessage({ type: 'close' }, '*')); }   // 「次のスポットを探す」→ カメラに戻る
   if (goal){ goal.addEventListener('click', e=>{ e.preventDefault(); parent.postMessage({ type: 'goal' }, '*'); }); }                // 「スタンプ帳を見る」
+} else {
+  // QRコードから直接開いたとき:「次のスポットを探す」で、ARのカメラ画面(自動起動)へ
+  const next = document.getElementById('nextBtn');
+  if (next){ next.style.display = 'inline-block'; next.addEventListener('click', ()=> { location.href = '../index.html?auto=1'; }); }
 }
