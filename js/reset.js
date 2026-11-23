@@ -1,9 +1,9 @@
 /* reset.html : このスマホ(ブラウザ)に保存された記録を消す
- * 消すもの: まちがい回数 / クリア記録 / 開始時刻 / 景品の受取記録
+ * 消すもの: まちがい回数 / クリア記録 / 開始時刻 / 景品の受取記録 / 受付済みの印
  * キー名は js/common.js と同じ。キーを変えたときは、ここも合わせてください。
  */
 (function(){
-  var KEYS = ['ivyArStampMistakes','ivyArStampCleared','ivyArStampStart','ivyArStampReceived'];
+  var KEYS = ['ivyArStampMistakes','ivyArStampCleared','ivyArStampStart','ivyArStampReceived','ivyArStampStarted'];
   var failed = false;
   try { KEYS.forEach(function(k){ localStorage.removeItem(k); }); } catch(e){ failed = true; }
   try { sessionStorage.removeItem('ivyArCam'); } catch(e){}

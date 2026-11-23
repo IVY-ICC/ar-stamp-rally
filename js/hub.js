@@ -1,4 +1,6 @@
 /* index.html(入口・カメラ)の動き:カメラ起動、マーカー読み取り→問題ページ表示、スタンプ帳 */
+// 受付済みの印: 受付のQR(このページ)を開いたら付ける。スポットのQRから直接開く問題ページが、これを確認します(js/common.js)。
+try { localStorage.setItem('ivyArStampStarted', '1'); } catch(e){}
 // マーカーの順番(targetIndex 0〜8)→ 問題ページ。順番は js/config.js の MARKER_ORDER で決めます。
 const FILES = APP_CONFIG.MARKER_ORDER.map(key => APP_CONFIG.SPOTS.find(s => s.key === key).page);
 const frame = document.getElementById('frame');
